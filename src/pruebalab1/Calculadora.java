@@ -5,6 +5,8 @@
  */
 package pruebalab1;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Bau
@@ -94,6 +96,8 @@ public class Calculadora extends javax.swing.JFrame {
     private void JbCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbCalcularActionPerformed
         // TODO add your handling code here:
         
+        try{
+        
         String nro = JtNro.getText();
         
         Integer res = Integer.parseInt(nro);
@@ -101,6 +105,15 @@ public class Calculadora extends javax.swing.JFrame {
         double raiz = Math.sqrt(res);
         
         jlResul.setText("Resultado " + raiz);
+            
+        }catch(NumberFormatException nf){
+        
+            JOptionPane.showMessageDialog(this,"Ingrese solo número por favor: ");
+            
+            JtNro.requestFocus();
+        
+        }
+        
         
     }//GEN-LAST:event_JbCalcularActionPerformed
 
